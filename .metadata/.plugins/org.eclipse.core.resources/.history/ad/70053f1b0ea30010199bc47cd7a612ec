@@ -1,0 +1,53 @@
+
+
+public class Living {
+    
+    // defaults
+    public final int DEFAULT_HEALTH = 1;
+    public final int DEFAULT_AGE = 0;
+    
+    // fields
+    private int health;
+    private int age;
+    
+    // status field
+    private boolean alive = true;
+    
+    
+    // getters and setters
+    public int getHealth() {
+        return this.health;
+    }
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    public int getAge() {
+        return this.age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public void setAliveStatus(boolean status) {
+    	this.alive = status;
+    }
+    public boolean getAliveStatus() {
+    	return this.alive;
+    }
+    
+    // constructors
+    public Living() {
+        setHealth(DEFAULT_HEALTH);
+        setAge(DEFAULT_AGE);
+        setAliveStatus(true);
+    }
+    public Living(int health, int age) {
+        setHealth(health);
+        setAge(age);
+    }
+    
+    // methods
+    public void eat() {
+    	System.out.println("I will eat anything");
+    }
+    
+}

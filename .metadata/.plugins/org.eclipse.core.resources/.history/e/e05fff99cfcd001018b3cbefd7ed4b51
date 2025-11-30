@@ -1,0 +1,24 @@
+import java.util.Base64;
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String message = "Hello";
+        char key = 'A';
+
+        String encrypted = xor(message, key);
+        String decrypted = xor(encrypted, key);
+
+        System.out.println("Encrypted: " + encrypted);
+        System.out.println("Decrypted: " + decrypted);
+	}
+	
+	public static String xor(String data, char key) {
+        char[] result = new char[data.length()];
+        for (int i = 0; i < data.length(); i++) {
+            result[i] = (char)(data.charAt(i) ^ key);
+        }
+        return new String(result);
+    }
+
+}

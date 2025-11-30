@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		CheckingsAccount c1 = new CheckingsAccount("eugene", 0);
+		c1.deposit(10000);
+		
+		System.out.println("Name: " + c1.getAccountName());
+		System.out.println("Balance: " + c1.getBalance());
+		
+		c1.withdraw(500);
+		System.out.println();
+		System.out.println("Name: " + c1.getAccountName());
+		System.out.println("Balance: " + c1.getBalance());
+	}
+	
+	static void printMainMenu() {
+		System.out.println("Choose an option.");
+		System.out.println("[1] Deposit");
+		System.out.println("[2] Withdraw");
+		System.out.println("[3] End Program");
+		int option = sc.nextInt();
+		
+		switch(option) {
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			default:
+				break;
+			
+		}
+	}
+	static void deposit() {
+		
+	}
+	static void withdraw() {
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;shakespeare.txt&apos; to &apos;[27]_HashMap&apos;&#x0D;&#x0A;- Original project: &apos;[27]_HashMap_2&apos;&#x0D;&#x0A;- Destination element: &apos;[27]_HashMap&apos;&#x0D;&#x0A;- Original element: &apos;shakespeare.txt&apos;" description="Copy file" element1="shakespeare.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1758548211270" target="/[27]_HashMap" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	static CheckingsAccount c1 = new CheckingsAccount("Elon Musk", 0);
+	
+	public static void main(String[] args) {
+		
+		printMainMenu();
+		sc.close();
+	}
+	
+	static void printMainMenu() {
+		System.out.println("Choose an option.");
+		System.out.println("[1] Deposit");
+		System.out.println("[2] Withdraw");
+		System.out.println("[3] End Program");
+		int option = sc.nextInt();
+		
+		switch(option) {
+			case 1:
+				deposit();
+				break;
+			case 2:
+				withdraw();
+				break;
+			case 3:
+				System.out.println("Program end");
+				break;
+			default:
+				System.out.println("Value out of range");
+				printMainMenu();
+				break;
+			
+		}
+	}
+	static void deposit() {
+		System.out.println("Enter amount to deposit:");
+		Double amount = sc.nextDouble();
+		c1.deposit(amount);
+	}
+	static void withdraw() {
+		System.out.println("Enter amount to withdraw:");
+		Double amount = sc.nextDouble();
+		c1.withdraw(amount);
+	}
+	static void printValues() {
+		System.out.println("Account Name: " + c1.getAccountName());
+		System.out.println("Balance: " + c1.getBalance());
+		System.out.println();
+	}
+
+}

@@ -1,0 +1,63 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+	// ------------------------------------COMPARISON OPERATORs-----------------------------------//
+
+	//  values compared using comparison operators
+	//  will return a boolean value (true or false).
+
+	//  ==      Equal to                    x == y	
+	//  !=	    Not equal	                x != y	
+	//  >	    Greater than	            x > y	
+	//  <	    Less than	                x < y	
+	//  >=	    Greater than or equal to	x >= y	
+	//  <=	    Less than or equal to	    x <= y
+
+
+	// ------------------------------------COMPARISON OPERATORs-----------------------------//
+		
+		// Sample 1
+		boolean truee = false;
+		int a = 5;
+		int b = 5;
+		int c = 6;
+		boolean friend = false;
+		System.out.println((a+b) < (b+c) && !truee && !(!friend));
+		System.out.println(2 == 2); // true
+		System.out.println(2 == 3); // false
+		System.out.println(2 != 2); // false
+		System.out.println(2 != 3); // true
+		System.out.println(2 > 3); // false
+		System.out.println(2 < 3); // true
+		System.out.println(2 >= 2); // true
+		System.out.println(2 >= 3); // false
+		System.out.println(2 <= 2); // true
+		System.out.println(2 <= 3); // true
+
+//		boolean isEqual = (2 == 2);
+//		System.out.println(isEqual); // true
+		
+		
+		
+		
+		// sample 2
+		int a = 2;
+		int b = 3;	
+		System.out.println(a == b); // false
+		System.out.println(a != b); // true
+		System.out.println(a > b); // false
+		
+	}
+}
+
+
+
+
+
+
+
+
+

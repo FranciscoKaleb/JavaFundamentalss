@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;[08]_If&apos; to &apos;[99]_HiddenApp&apos;" description="Rename resource &apos;[08]_If&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/[08]_If" name="[99]_HiddenApp" stamp="1762587591713" updateReferences="true"/>
+</session>

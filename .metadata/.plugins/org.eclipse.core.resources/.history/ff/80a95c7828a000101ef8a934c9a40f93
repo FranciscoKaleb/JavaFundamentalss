@@ -1,0 +1,44 @@
+
+public class Accounts {
+	private static String DEFAULT_NAME = "Unnamed Account";
+	private static double DEFAULT_BALANCE = 0;
+	
+	// fields
+	private String account_name;
+	private String account_type;
+	private double balance;
+	
+	// properties
+	public String getAccountName() {
+		return this.account_name;
+	}
+	
+	public void setAccountName(String name) {
+		this.account_name = name;
+	}
+	
+	public double getBalance() {
+		return this.balance;
+	}
+	
+	public void setBalance(double b) {
+		this.balance = b;
+	}
+	
+	// constructors
+	public Accounts() {
+		setAccountName(DEFAULT_NAME);
+		setBalance(DEFAULT_BALANCE);
+	}
+	public Accounts(String n, double b) {
+		setAccountName(n);
+		setBalance(b);
+	}
+	
+	// methods
+	public void deposit(double b) {
+		this.balance = this.balance + b;
+	}
+
+	
+}

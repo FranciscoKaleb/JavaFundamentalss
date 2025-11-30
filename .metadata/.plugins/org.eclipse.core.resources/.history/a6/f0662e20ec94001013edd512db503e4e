@@ -1,0 +1,13 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// create a person object
+		Person p = new Person("Kaleb", 88);
+		
+		System.out.println(p.getName());
+	}
+
+}
+

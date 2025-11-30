@@ -1,0 +1,67 @@
+
+public class Person {
+	
+	//Constants and defaults
+	String default_name = "Juan";
+	int default_age = 18;
+
+	// fields
+	private String name;
+	private int age;
+	private boolean alive = true;
+	private boolean broken_legs = true;
+	
+	
+	//getters and setters - Encapsulation
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return this.age;
+	}
+	public void setAge(int age) {
+		if(age < 0) {
+			System.out.println("age cannot be negative");
+		}
+		else {
+			this.age = age;
+		}
+	}
+	
+	// constructors
+	public Person() {
+		this.name = default_name;
+		this.age = default_age;
+		
+	}
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	
+	
+	// methods
+	public void introduce() {
+		if(this.alive == true) {
+			System.out.println("Hi my name is " + name + " I am " + age + " years old");
+		}
+		else {
+			System.out.println("dead cant talk");
+		}
+		
+	}
+	public void run() {
+		if(this.broken_legs == true) {
+			System.out.println("cant run, legs broken");
+		}
+		else {
+			System.out.println("running. . .");
+		}
+	}
+	
+
+}

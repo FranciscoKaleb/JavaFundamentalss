@@ -1,0 +1,46 @@
+import java.util.Base64;
+public class Main {
+
+	public static void main(String[] args) {
+		
+
+//		example1();
+		example2();
+		
+	}
+	
+	public static void example1() { // setting char
+		char letter = 64;
+		System.out.println(letter);
+	}
+	
+	public static void example2() { // how bitwise operator XOR works
+		System.out.println('A' ^ 'B');
+		// A = 65 = 1000001
+		// B = 66 = 1000010
+		// XOR ---> 0000011 = 3
+		// output is 3
+	}
+	
+	public static void example3() {
+		String message = "Hello";
+        char key = 'K';
+
+        String encrypted = xor(message, key);
+        String decrypted = xor(encrypted, key);
+
+        System.out.println("Encrypted: " + encrypted);
+        System.out.println("Decrypted: " + decrypted);
+	}
+	
+	public static String xor(String data, char key) {
+        char[] result = new char[data.length()];
+        
+        for (int i = 0; i < data.length(); i++) {
+            result[i] = (char)(data.charAt(i) ^ key);
+        }
+        
+        return new String(result);
+    }
+
+}

@@ -1,0 +1,39 @@
+
+public class Person {
+	
+	//Constants and defaults
+	String default_name = "Juan";
+	int default_age = 18;
+
+	// fields
+	private String name;
+	private int age;
+	
+	
+	//getters and setters
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	// constructors
+	public Person() {
+		this.name = default_name;
+		this.age = default_age;
+	}
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	
+	
+	// methods
+	public void introduce() {
+		System.out.println("Hi my name is " + name + " I am " + age + " years old");
+	}
+	
+
+}

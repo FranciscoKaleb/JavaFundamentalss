@@ -1,0 +1,93 @@
+import java.util.HashMap;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// HashMap - key-value pair type of data where the key is unique (no duplicates)
+		
+		// example1(); // adding, accessing, changing Hashmap value
+		// example2(); // looping through hashmap
+		// example3(); // adding 1 to value
+		// example4(); // simple word count
+		
+		// challenge - ----------->>>>>>> put code in hash_map_2 project folder
+			// using File Streaming, read the shakespeare.txt
+			// create a file called wordcount.txt that contains unique word as key, and its count as value
+				// for example
+					// the, 4990
+					// and, 7899
+	}
+	
+	public static void example1() {
+		HashMap<String, Integer> grades = new HashMap<>();
+
+        // Add key-value pairs
+        grades.put("Alice", 90);
+        grades.put("Alice", 90);
+        grades.put("Bob", 85);
+        grades.put("Charlie", 92);
+        
+        // Access those values     
+        System.out.println(grades.get("Alice")); // prints the value for alice, 90
+        
+        // change value for alice
+        grades.put("Alice", 999999);
+        System.out.println(grades.get("Alice"));
+	}
+	
+	public static void example2() {
+		HashMap<String, Integer> grades = new HashMap<>();
+
+        // Add key-value pairs
+        grades.put("Alice", 90);
+        grades.put("Bob", 85);
+        grades.put("Charlie", 92);
+        
+        // iterate through the whole hashmap
+        for(String key : grades.keySet()) {
+        	System.out.println(key + " " + grades.get(key));
+        }
+        
+	}
+	
+	public static void example3() {
+		HashMap<String, Integer> grades = new HashMap<>();
+
+        // Add key-value pairs
+        grades.put("Alice", 90);
+        grades.put("Bob", 85);
+        grades.put("Charlie", 92);
+        
+		grades.put("Alice", grades.get("Alice") + 1); // add 1 to 90
+	    System.out.println(grades.get("Alice"));
+	}
+	
+	
+	
+	public static void example4() {
+		String text = "The bird bird is the best the universe.";
+		HashMap<String, Integer> text_map = new HashMap<>();
+		
+		String[] text_arr = text.split(" ");
+		
+		for(String t : text_arr) {
+			
+			if(text_map.get(t) == null) {
+				text_map.put(t, 1);
+			}else {
+				text_map.put(t, text_map.get(t) + 1);
+			}
+			
+		}
+		
+		
+		for(String name : text_map.keySet()) {
+        	System.out.println(name + " " + text_map.get(name));
+        }
+		
+	}
+	
+	
+
+}

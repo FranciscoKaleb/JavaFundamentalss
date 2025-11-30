@@ -1,0 +1,90 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+//		example1(); // Default Constructor
+//		example2(); // Constructor with parameters
+		//example3(); // using class methods
+		example4(); // creating array of a class type
+		
+	}
+	
+	static void example1() {
+		
+		Person p1 = new Person(); // create people object with default Constructor
+		System.out.println(p1.getName()); // outputs the default name
+		
+		p1.setName("Shane");
+		System.out.println(p1.getName());
+		p1.setAge(-3);
+		p1.learn();
+		
+	}
+	
+	static void example2() {
+		
+		Person p1 = new Person("Kaleb", 28); // Create people object using Constructor with parameters
+		System.out.println(p1.getName());
+		System.out.println(p1.getAge());
+		
+	}
+	
+	static void example3() {
+		Person p1 = new Person("Naruto", 20);
+		p1.shout();
+	}
+	
+	static void example4() {
+		
+		ArrayList<Person> p_arr = new ArrayList<Person>();
+		Person p1 = new Person("Naruto", 35);
+		Person p2 = new Person("Sasuke", 35);
+		
+		p_arr.add(p2);
+		p_arr.add(p1);
+		
+		for(Person p : p_arr) {
+			System.out.println("Name: " + p.getName() );
+			System.out.println("Age: " + p.getAge() );
+
+			System.out.println();
+		}
+		
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

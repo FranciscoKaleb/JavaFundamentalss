@@ -1,0 +1,176 @@
+package Cashier;
+
+
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
+import DB.DBConnection;
+import EntryPoint.EntryPoint;
+import java.awt.Component;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+
+public class CashierWindow extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTable table;
+	private JScrollPane scrollPane;
+	
+	private JTable table_1;
+	private JScrollPane scrollPane_1;
+	private JButton btnNewButton;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JLabel lblNewLabel_1_3;
+	private JTextField textField_2;
+
+	public CashierWindow() {
+		
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 804, 503);
+		setLocationRelativeTo(null);
+		
+		
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		table = new JTable();
+        scrollPane = new JScrollPane(table);
+        scrollPane.setBounds(32, 48, 182, 302);
+        contentPane.add(scrollPane);
+        
+        table_1 = new JTable();
+        scrollPane_1 = new JScrollPane(table_1);
+        scrollPane_1.setBounds(327, 48, 201, 302);
+        contentPane.add(scrollPane_1);
+        
+        btnNewButton = new JButton("remove");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		loadTableData();
+        	}
+        });
+        btnNewButton.setBounds(32, 384, 85, 21);
+        contentPane.add(btnNewButton);
+        
+        textField = new JTextField();
+        textField.setBounds(118, 19, 96, 19);
+        contentPane.add(textField);
+        textField.setColumns(10);
+        
+        textField_1 = new JTextField();
+        textField_1.setBounds(644, 101, 96, 19);
+        contentPane.add(textField_1);
+        textField_1.setColumns(10);
+        
+        JLabel lblNewLabel = new JLabel("Cash");
+        lblNewLabel.setBounds(574, 104, 45, 13);
+        contentPane.add(lblNewLabel);
+        
+        JLabel lblNewLabel_1 = new JLabel("total");
+        lblNewLabel_1.setBounds(574, 50, 45, 13);
+        contentPane.add(lblNewLabel_1);
+        
+        JLabel lblNewLabel_1_1 = new JLabel("total");
+        lblNewLabel_1_1.setBounds(644, 50, 45, 13);
+        contentPane.add(lblNewLabel_1_1);
+        
+        JLabel lblNewLabel_1_2 = new JLabel("change");
+        lblNewLabel_1_2.setBounds(574, 169, 45, 13);
+        contentPane.add(lblNewLabel_1_2);
+        
+        lblNewLabel_1_3 = new JLabel("change");
+        lblNewLabel_1_3.setBounds(644, 169, 45, 13);
+        contentPane.add(lblNewLabel_1_3);
+        
+        JButton btnProceed = new JButton("Proceed");
+        btnProceed.setBounds(655, 384, 85, 21);
+        contentPane.add(btnProceed);
+        
+        JButton btnCancel = new JButton("cancel");
+        btnCancel.setBounds(552, 384, 85, 21);
+        contentPane.add(btnCancel);
+        
+        textField_2 = new JTextField();
+        textField_2.setColumns(10);
+        textField_2.setBounds(263, 101, 54, 19);
+        contentPane.add(textField_2);
+        
+        JLabel lblNewLabel_1_3_1 = new JLabel("quantity");
+        lblNewLabel_1_3_1.setBounds(222, 104, 45, 13);
+        contentPane.add(lblNewLabel_1_3_1);
+        
+        JLabel lblNewLabel_1_4 = new JLabel("barcode num");
+        lblNewLabel_1_4.setBounds(32, 22, 76, 13);
+        contentPane.add(lblNewLabel_1_4);
+        
+      
+		
+		
+		addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                
+                EntryPoint inv = new EntryPoint();
+                inv.setVisible(true);
+            }
+        });
+
+	}
+	
+    public void loadTableData() {
+        Connection conn = DBConnection.getConnection();
+        if (conn != null) {
+            try {
+                String query = "SELECT * FROM products"; // example
+                PreparedStatement stmt = conn.prepareStatement(query);
+                ResultSet rs = stmt.executeQuery();
+
+                ResultSetMetaData rsmd = rs.getMetaData();
+                int columns = rsmd.getColumnCount();
+
+                DefaultTableModel model = new DefaultTableModel();
+
+                // Add column names
+                for (int i = 1; i <= columns; i++) {
+                    model.addColumn(rsmd.getColumnName(i));
+                }
+
+                // Add rows
+                while (rs.next()) {
+                    Object[] row = new Object[columns];
+                    for (int i = 1; i <= columns; i++) {
+                        row[i - 1] = rs.getObject(i);
+                    }
+                    model.addRow(row);
+                }
+
+                table_1.setModel(model);
+
+                stmt.close();
+                conn.close();
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

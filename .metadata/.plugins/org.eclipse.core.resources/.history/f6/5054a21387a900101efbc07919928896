@@ -1,0 +1,29 @@
+
+public class CheckingsAccount extends Accounts {
+	
+	
+	
+	// fields
+	private final double withdrawal_fee = 1.5;
+	
+	
+	// Constructor
+	public CheckingsAccount(String a_n, double b) {
+		setAccountName(a_n);
+		setBalance(b);
+	}
+	
+	// withdraw method
+	public void withdraw(double a) {
+		if(a < 0) {
+			System.out.println("Amount invalid");
+		}
+		else if(a > (getBalance() - withdrawal_fee)) {
+			System.out.println("Insufficient balance");
+		}
+		else {
+			setBalance(getBalance() - (a + withdrawal_fee));
+		}
+	}
+	
+}

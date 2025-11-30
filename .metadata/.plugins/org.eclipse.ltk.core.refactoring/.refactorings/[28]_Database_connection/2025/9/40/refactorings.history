@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DBConnection.java&apos; to &apos;[29]_Java_GUI/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;[28]_Database_connection&apos;&#x0D;&#x0A;- Destination element: &apos;[29]_Java_GUI/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;DBConnection.java&apos;" description="Copy compilation unit" destination="=\[29\]_Java_GUI/src&lt;" element1="/src&lt;{DBConnection.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1759068641674" units="1" version="1.0"/>
+</session>

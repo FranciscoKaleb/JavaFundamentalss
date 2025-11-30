@@ -1,0 +1,21 @@
+
+public class CheckingsAccount extends Accounts {
+	
+	
+	
+	// fields
+	private double withdrawal_fee = 1.5;
+	
+	
+	// Constructor
+	public CheckingsAccount(String a_n, double b) {
+		setAccountName(a_n);
+		setBalance(b);
+	}
+	
+	// withdraw method
+	public void withdraw(double a) {
+		balance = balance - a;
+	}
+	
+}

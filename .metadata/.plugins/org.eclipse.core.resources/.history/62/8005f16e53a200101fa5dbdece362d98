@@ -1,0 +1,36 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		double average = average(22, 45);
+		System.out.println(average);
+		
+		int[] num_arr = {22,33,44,55,999,88};
+		int max = getMax(num_arr);
+		System.out.println(max);
+	}
+	static int getMax(int...numbers) {
+		int max = -999999999;
+		
+		for(int num: numbers) {
+			if(num > max) {
+				max = num;
+			}
+		}
+		// type code here
+		return max;
+	}
+
+	static double average(double...numbers) {
+		double average = 0;
+		double sum = 0;
+
+		return average;
+	}
+	
+	
+	
+	
+
+}

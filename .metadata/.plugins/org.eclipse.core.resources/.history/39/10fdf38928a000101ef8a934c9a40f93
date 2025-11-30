@@ -1,0 +1,17 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		CheckingsAccount c1 = new CheckingsAccount("eugene", 0);
+		c1.deposit(10000);
+		
+		System.out.println("Name: " + c1.getAccountName());
+		System.out.println("Balance: " + c1.getBalance());
+		
+		c1.withdraw(500);
+		
+		System.out.println("Name: " + c1.getAccountName());
+		System.out.println("Balance: " + c1.getBalance());
+	}
+
+}
